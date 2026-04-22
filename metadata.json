@@ -1,0 +1,12 @@
+{
+  "name": "UrbanStay Indirapuram",
+  "description": "Premium PG booking for Indirapuram, featuring Exotica Girls PG. Verified rooms with top amenities.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "Location-based search",
+    "Room booking",
+    "Direct contact for PGs"
+  ]
+}
