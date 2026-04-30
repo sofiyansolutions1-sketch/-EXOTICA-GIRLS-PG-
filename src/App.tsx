@@ -5,7 +5,7 @@
 
 import { useState } from 'react';
 import { ClipboardList } from 'lucide-react';
-import { TopBar, BrandedHero, GalleryHeader, LocationSection, CategoryGrid, BottomNav, RoomCard, FEATURED_ROOMS, GallerySection, EXOTICA_GALLERY, FloatingActions, InquiryModal } from './components.tsx';
+import { TopBar, BrandedHero, GalleryHeader, LocationSection, ContactSection, CategoryGrid, BottomNav, RoomCard, FEATURED_ROOMS, GallerySection, EXOTICA_GALLERY, FloatingActions, InquiryModal } from './components.tsx';
 import { motion } from 'motion/react';
 import { RoomType } from './types.ts';
 
@@ -91,6 +91,9 @@ export default function App() {
 
         {/* 4. Location (Mapping) Section */}
         <LocationSection />
+
+        {/* 5. Standalone Contact Section */}
+        <ContactSection />
         
         {/* Simple Footer */}
         <div className="px-5 py-12 text-center text-[10px] text-muted opacity-50">

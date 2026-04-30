@@ -114,15 +114,24 @@ export const FEATURED_ROOMS: RoomType[] = [
 
 export const TopBar = () => (
   <div className="flex items-center justify-between px-5 py-4 bg-white sticky top-0 z-50">
-    <div className="flex items-center gap-1.5 cursor-pointer">
-      <div className="p-1.5 bg-blue-50 rounded-lg">
-        <MapPin size={18} className="text-primary" />
-      </div>
-      <div>
-        <div className="flex items-center gap-1 text-sm font-bold">
-          Indirapuram <ChevronDown size={14} className="text-muted" />
+    <div className="flex items-center gap-4 sm:gap-6">
+      <div className="flex items-center gap-1.5 cursor-pointer">
+        <div className="p-1.5 bg-blue-50 rounded-lg">
+          <MapPin size={18} className="text-primary" />
         </div>
-        <div className="text-[10px] text-muted font-medium">Ghaziabad, UP</div>
+        <div>
+          <div className="flex items-center gap-1 text-sm font-bold">
+            Indirapuram <ChevronDown size={14} className="text-muted" />
+          </div>
+          <div className="text-[10px] text-muted font-medium">Ghaziabad, UP</div>
+        </div>
+      </div>
+      
+      <div className="h-8 w-px bg-slate-100 hidden sm:block" />
+      
+      <div className="flex flex-col">
+        <span className="text-[7px] font-bold text-pink-600 uppercase leading-none mb-0.5 tracking-wider">Direct Call</span>
+        <a href="tel:8860002223" className="text-[11px] font-black text-slate-800 bg-pink-50/50 px-1.5 py-0.5 rounded border border-pink-100/50">8860002223</a>
       </div>
     </div>
     <div className="p-2 bg-slate-50 rounded-full border border-slate-100">
@@ -277,7 +286,7 @@ export const GalleryHeader = () => {
 };
 
 export const LocationSection = () => (
-  <div className="px-5 py-8 space-y-6 bg-white border-b border-slate-100">
+  <div className="px-5 py-8 space-y-6 bg-white">
     <div>
        <h3 className="text-xl font-bold text-slate-800 mb-2">Location</h3>
        <p className="text-xs text-muted font-medium uppercase tracking-widest flex items-center gap-2">
@@ -285,28 +294,32 @@ export const LocationSection = () => (
        </p>
     </div>
 
-    <a 
-      href="https://maps.google.com/?q=House+no+-143,+near+avantika+hospital,+Mayur+Vihar,+Niti+Khand+2,+Indirapuram,+Ghaziabad,+Uttar+Pradesh+201014"
-      target="_blank"
-      rel="noreferrer"
-      className="block p-5 bg-slate-50 rounded-3xl border border-slate-100 group transition-all hover:bg-blue-50/50 hover:border-blue-100"
+    <div 
+      className="p-5 bg-slate-50 rounded-3xl border border-slate-100 transition-all hover:bg-blue-50/50 hover:border-blue-100"
     >
-       <div className="flex items-start justify-between mb-4">
-         <div className="p-3 bg-white rounded-2xl shadow-sm">
-           <MapPin size={24} className="text-primary" />
+       <a 
+         href="https://maps.google.com/?q=House+no+-143,+near+avantika+hospital,+Mayur+Vihar,+Niti+Khand+2,+Indirapuram,+Ghaziabad,+Uttar+Pradesh+201014"
+         target="_blank"
+         rel="noreferrer"
+         className="block group"
+       >
+         <div className="flex items-start justify-between mb-4">
+           <div className="p-3 bg-white rounded-2xl shadow-sm">
+             <MapPin size={24} className="text-primary" />
+           </div>
+           <div className="bg-white px-3 py-1 rounded-full text-[10px] font-bold text-primary border border-blue-50 shadow-sm">
+             Open in Maps
+           </div>
          </div>
-         <div className="bg-white px-3 py-1 rounded-full text-[10px] font-bold text-primary border border-blue-50 shadow-sm">
-           Open in Maps
+         <h4 className="text-lg font-bold text-slate-800 mb-1">Exotica Girls PG</h4>
+         <p className="text-sm text-slate-600 leading-relaxed mb-4">
+           House no -143, near avantika hospital, Mayur Vihar, Niti Khand 2, Indirapuram, Ghaziabad, Uttar Pradesh 201014
+         </p>
+         <div className="flex items-center gap-2 text-xs font-bold text-primary group-hover:translate-x-1 transition-transform">
+           Get Directions <ChevronDown className="-rotate-90" size={14} />
          </div>
-       </div>
-       <h4 className="text-lg font-bold text-slate-800 mb-1">Exotica Girls PG</h4>
-       <p className="text-sm text-slate-600 leading-relaxed mb-4">
-         House no -143, near avantika hospital, Mayur Vihar, Niti Khand 2, Indirapuram, Ghaziabad, Uttar Pradesh 201014
-       </p>
-       <div className="flex items-center gap-2 text-xs font-bold text-primary group-hover:translate-x-1 transition-transform">
-         Get Directions <ChevronDown className="-rotate-90" size={14} />
-       </div>
-    </a>
+       </a>
+    </div>
 
     <div className="rounded-3xl overflow-hidden border border-slate-100 shadow-sm h-64 bg-slate-100">
        <iframe 
@@ -318,6 +331,33 @@ export const LocationSection = () => (
          loading="lazy" 
          referrerPolicy="no-referrer-when-downgrade"
        />
+    </div>
+  </div>
+);
+
+export const ContactSection = () => (
+  <div className="px-5 py-2">
+    <div className="bg-slate-900 rounded-2xl p-4 relative overflow-hidden shadow-md">
+      <div className="absolute top-0 right-0 w-16 h-16 bg-pink-600/5 blur-xl rounded-full" />
+      
+      <div className="relative z-10 flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <div className="w-8 h-8 bg-white/5 rounded-xl flex items-center justify-center border border-white/5 shrink-0">
+            <Phone size={14} className="text-pink-500" />
+          </div>
+          <div>
+            <h3 className="text-white text-[11px] font-bold">Booking Hotline</h3>
+            <span className="text-[8px] font-medium text-slate-500 uppercase">Available 24/7</span>
+          </div>
+        </div>
+
+        <a 
+          href="tel:8860002223"
+          className="bg-pink-600 hover:bg-pink-500 text-white rounded-xl px-4 py-2 transition-all active:scale-95 flex items-center justify-center"
+        >
+          <span className="text-xs font-black tracking-tight">8860002223</span>
+        </a>
+      </div>
     </div>
   </div>
 );
